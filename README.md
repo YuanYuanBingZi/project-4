@@ -26,8 +26,8 @@ We are essentially replacing the calculator here [https://rusa.org/octime_acp.ht
 
 *  How To Use Start(Docker instructions, Web app instructions)
 	* For Docker Instruction:
-	  * step1: generate the docker imgae by command  "docker build -t <ImgaeName>"
-	  * step2: generate the docker container by command "docker run -p portname1: portname2 <ImageName>"
+	  * step1: generate the docker imgae by command  "docker build -t ImgaeName"
+	  * step2: generate the docker container by command "docker run -p portname1: portname2 ImageName"
 	  * step3: open the browser and go into the localhost then interact with the browser
 	* Web app instruction
 	  * First, you need to choose the end km or the length of the race based on the options
