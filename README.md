@@ -14,20 +14,26 @@ We are essentially replacing the calculator here [https://rusa.org/octime_acp.ht
 
 ## Tasks
 
-* Implement the logic in `acp_times.py` based on the algorithm linked above.
+* Application Outline
+  * This app will generate a website that calculate the opening time and closing time for ACP brevets based on the checkpoint(you typed as input) kilometers and the time you choose.
 
-* Create test cases using the original website, and write test suites for your project.
-	* Based on what was discussed in the lecture, create test cases, try them in the original website, and check if your functions correctly calculate the times.
-	* This will effectively replicate the calulator above.
+* Algorithm(The way we calcute the open and the close time)
+	* Basically, we will use Maximum and Minimum Speed to Calculate Open Time and Close Time respectively.
+	* In different kilometer scales, we have different standard of speeds. (For example, in 0-200, the Max Speed is 34 km/hr; in 200-400, the Max Speed is 32 km/hr; in 400-600, the Max Speed is 30 km/hr...)
+	* There are some special cases:
+	   * The closing time for 0 km is always 1 hour, and if the km is before 60km, we will use a different rule to take care of late stater.
+	   * We might have some adjustments on closing time on special kms. (For example, if your end point is 200km, the closing time is not 13h 20 min, is 13h 30min) 
 
-* Edit the template and Flask app so that the required remaining arugments are passed along.
-	* Currently the miles to kilometers (and some other basic stuff) is implemented with AJAX. 
-	* The remainder is left to you.
+*  How To Use Start(Docker instructions, Web app instructions)
+	* For Docker Instruction:
+	  * step1: generate the docker imgae by command  "docker build -t <ImgaeName>"
+	  * step2: generate the docker container by command "docker run -p portname1: portname2 <ImageName>"
+	  * step3: open the browser and go into the localhost then interact with the browser
+	* Web app instruction
+	  * First, you need to choose the end km or the length of the race based on the options
+	  * Second, you need to choose the date you want to query
+	  * third, you can type the checkpoint km one by one and press return, you will get the exact time for the open time and close time.
 
-* As always, revise the README file, and add your info to `Dockerfile`. These have points!
-	* **NOTE:** This time, you should outline the application, the algorithm, and how to use start (docker instructions, web app instructions). **Make sure you're thorough, otherwise you may not get all the points.**
-
-* As always, submit your `credentials.ini` through Canvas. It should contain your name and git repo URL.
 
 ### Testing
 
